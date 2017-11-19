@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SeaBattle.EApp;
-using SeaBattle.EApp.Common;
-using SeaBattle.EApp.Common.Dto;
-using SeaBattle.EApp.MyImpl;
+using SeaBattle.Eng.Common.Dto;
+using SeaBattle.Renderer.ConsoleImpl;
+
 
 namespace SeaBattle
 {
@@ -14,22 +13,17 @@ namespace SeaBattle
     {
         static void Main(string[] args)
         {
-            ISeaBattleGame game = new SeaBattleGame();
+            var renderer = new ConsoleBoardRenderer();
 
-            game.ResetAndInit(new InitInfo
+            var gameBoard = new GameBoard
             {
-                SeaHeight = 10,
-                SeaWidth = 10,
-                ShipCounts =
-                {
-                    {1, 5 },
-                    {3, 3 },
-                }
-            });
+               
+            };
 
-            game.GetCurrentState();
-            GameBoard board = game.GetBoard();
+            renderer.Render(gameBoard);
 
+
+            Console.ReadKey();
         }
 
 

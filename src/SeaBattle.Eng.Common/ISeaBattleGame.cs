@@ -1,6 +1,6 @@
-﻿using SeaBattle.EApp.Common.Dto;
+﻿using SeaBattle.Eng.Common.Dto;
 
-namespace SeaBattle.EApp.Common
+namespace SeaBattle.Eng.Common
 {
     public interface ISeaBattleGame
     {

@@ -1,4 +1,4 @@
-﻿namespace SeaBattle.EApp.Common.Dto
+﻿namespace SeaBattle.Eng.Common.Dto
 {
     public enum Players
     {

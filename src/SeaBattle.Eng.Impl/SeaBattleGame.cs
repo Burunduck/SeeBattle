@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using SeaBattle.EApp.Common;
-using SeaBattle.EApp.Common.Dto;
+using SeaBattle.Eng.Common;
+using SeaBattle.Eng.Common.Dto;
 
-namespace SeaBattle.EApp.MyImpl
+namespace SeaBattle.Eng.Impl
 {
     public class SeaBattleGame : ISeaBattleGame
     {

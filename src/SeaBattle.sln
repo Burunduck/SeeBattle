@@ -5,6 +5,18 @@ VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeaBattle", "SeaBattle\SeaBattle.csproj", "{B8B0C311-408D-4EBF-B97D-AE0664F6DD15}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeaBattle.Eng.Common", "SeaBattle.Eng.Common\SeaBattle.Eng.Common.csproj", "{FED05BBA-72FC-4D19-940E-9C8B650FACB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeaBattle.Eng.Impl", "SeaBattle.Eng.Impl\SeaBattle.Eng.Impl.csproj", "{D5E1E966-F7DC-4F06-8040-E69F5F331450}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Eng", "Eng", "{23B11627-ECBB-422F-90A3-BD991AF48B7B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Renderer", "Renderer", "{AE96167C-45AD-4AAA-B6EA-65CAD79EC81E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeaBattle.Renderer.Common", "SeaBattle.Renderer.Common\SeaBattle.Renderer.Common.csproj", "{4646124E-502E-4F6C-8C65-0E7FE1CF17F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeaBattle.Renderer.ConsoleImpl", "SeaBattle.Renderer.ConsoleImpl\SeaBattle.Renderer.ConsoleImpl.csproj", "{70918717-700F-4541-AFF6-A87035108A33}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +27,31 @@ Global
 		{B8B0C311-408D-4EBF-B97D-AE0664F6DD15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8B0C311-408D-4EBF-B97D-AE0664F6DD15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8B0C311-408D-4EBF-B97D-AE0664F6DD15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FED05BBA-72FC-4D19-940E-9C8B650FACB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FED05BBA-72FC-4D19-940E-9C8B650FACB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FED05BBA-72FC-4D19-940E-9C8B650FACB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FED05BBA-72FC-4D19-940E-9C8B650FACB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5E1E966-F7DC-4F06-8040-E69F5F331450}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5E1E966-F7DC-4F06-8040-E69F5F331450}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5E1E966-F7DC-4F06-8040-E69F5F331450}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5E1E966-F7DC-4F06-8040-E69F5F331450}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4646124E-502E-4F6C-8C65-0E7FE1CF17F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4646124E-502E-4F6C-8C65-0E7FE1CF17F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4646124E-502E-4F6C-8C65-0E7FE1CF17F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4646124E-502E-4F6C-8C65-0E7FE1CF17F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70918717-700F-4541-AFF6-A87035108A33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70918717-700F-4541-AFF6-A87035108A33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70918717-700F-4541-AFF6-A87035108A33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70918717-700F-4541-AFF6-A87035108A33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FED05BBA-72FC-4D19-940E-9C8B650FACB0} = {23B11627-ECBB-422F-90A3-BD991AF48B7B}
+		{D5E1E966-F7DC-4F06-8040-E69F5F331450} = {23B11627-ECBB-422F-90A3-BD991AF48B7B}
+		{4646124E-502E-4F6C-8C65-0E7FE1CF17F5} = {AE96167C-45AD-4AAA-B6EA-65CAD79EC81E}
+		{70918717-700F-4541-AFF6-A87035108A33} = {AE96167C-45AD-4AAA-B6EA-65CAD79EC81E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {472AD87B-2683-4C70-B213-E4836D00CE8F}

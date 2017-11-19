@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B8B0C311-408D-4EBF-B97D-AE0664F6DD15}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>SeaBattle</RootNamespace>
-    <AssemblyName>SeaBattle</AssemblyName>
+    <ProjectGuid>{D5E1E966-F7DC-4F06-8040-E69F5F331450}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SeaBattle.Eng.Impl</RootNamespace>
+    <AssemblyName>SeaBattle.Eng.Impl</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,28 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
+    <Compile Include="SeaBattleGame.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SeaBattle.Eng.Common\SeaBattle.Eng.Common.csproj">
       <Project>{fed05bba-72fc-4d19-940e-9c8b650facb0}</Project>
       <Name>SeaBattle.Eng.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SeaBattle.Eng.Impl\SeaBattle.Eng.Impl.csproj">
-      <Project>{d5e1e966-f7dc-4f06-8040-e69f5f331450}</Project>
-      <Name>SeaBattle.Eng.Impl</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SeaBattle.Renderer.Common\SeaBattle.Renderer.Common.csproj">
-      <Project>{4646124e-502e-4f6c-8c65-0e7fe1cf17f5}</Project>
-      <Name>SeaBattle.Renderer.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SeaBattle.Renderer.ConsoleImpl\SeaBattle.Renderer.ConsoleImpl.csproj">
-      <Project>{70918717-700f-4541-aff6-a87035108a33}</Project>
-      <Name>SeaBattle.Renderer.ConsoleImpl</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

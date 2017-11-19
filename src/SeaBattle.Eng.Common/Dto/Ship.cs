@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace SeaBattle.EApp.Common.Dto
+namespace SeaBattle.Eng.Common.Dto
 {
     public class Ship
     {

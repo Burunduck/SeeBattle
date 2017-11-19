@@ -1,4 +1,4 @@
-namespace SeaBattle.EApp.Common
+namespace SeaBattle.Eng.Common
 {
     public enum GameStates
     {
