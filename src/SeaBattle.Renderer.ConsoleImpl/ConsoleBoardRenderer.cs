@@ -16,22 +16,74 @@ namespace SeaBattle.Renderer.ConsoleImpl
         /// <param name="board">Игровая доска</param>
         public void Render(GameBoard board)
         {
-            for (int i = 0; i < board.SeaWidth; i++)
-            {
-                Console.Write(" "+i);
-            }
+            int[,] pole = new int[board.SeaHeight, board.SeaWidth];
+
+
             for (int i = 0; i < board.SeaHeight; i++)
             {
-                Console.WriteLine();
-                Console.Write(i+" ");
-                for (int j = 0; j <board.SeaWidth ; j++)
+
+                for (int j = 0; j < board.SeaWidth; j++)
                 {
-                    Console.Write(0+" ");
+                    pole[i, j] = 0;
                 }
 
 
 
             }
+            foreach (KeyValuePair<Players, List<Ship>> Player in board.Ships)
+            {
+                if (Player.Key == 0)
+                { //Как понять какому игроку устонавливать?
+                    foreach (Ship ship in Player.Value)
+                    {
+                        if (ship.Orientation == 0)
+                        {
+                            for (int i = 0; i < ship.Len; i++)
+                            {
+
+                                pole[ship.PosX, ship.PosY + i] = 1;
+
+                            }
+
+                            foreach (int paluba in ship.Hits)
+                            {
+                                pole[ship.PosX, ship.PosY + paluba] = -1;
+                            }
+
+
+                        }
+                        else
+                        {
+                            for (int i = 0; i < ship.Len; i++)
+                            {
+                                pole[ship.PosX + i, ship.PosY] = 1;
+                            }
+
+                            foreach (int paluba in ship.Hits)
+                            {
+                                pole[ship.PosX + paluba, ship.PosY] = -1;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            for (int i = 0; i < board.SeaHeight; i++)
+            {
+                Console.WriteLine();
+                for (int j = 0; j < board.SeaWidth; j++)
+                {
+                    Console.Write(pole[i, j]+" ");
+                }
+            }
+
         }
+
+
     }
 }
+        
+
+    
+
