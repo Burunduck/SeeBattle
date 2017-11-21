@@ -9,7 +9,7 @@ using SeaBattle.Renderer.ConsoleImpl;
 
 namespace SeaBattle
 {
-    //lol
+    //Is it work?
     class Program
     {
         static void Main(string[] args)
