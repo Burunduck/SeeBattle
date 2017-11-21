@@ -16,7 +16,22 @@ namespace SeaBattle.Renderer.ConsoleImpl
         /// <param name="board">Игровая доска</param>
         public void Render(GameBoard board)
         {
-            Console.WriteLine("stub...");
+            for (int i = 0; i < board.SeaWidth; i++)
+            {
+                Console.Write(" "+i);
+            }
+            for (int i = 0; i < board.SeaHeight; i++)
+            {
+                Console.WriteLine();
+                Console.Write(i+" ");
+                for (int j = 0; j <board.SeaWidth ; j++)
+                {
+                    Console.Write(0+" ");
+                }
+
+
+
+            }
         }
     }
 }
