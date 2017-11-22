@@ -2,12 +2,14 @@
 
 namespace SeaBattle.Eng.Common
 {
-    public interface ISeaBattleGame
-    {
-        void ResetAndInit(InitInfo initInfo);
+	public interface ISeaBattleGame
+	{
+		void ResetAndInit(InitInfo initInfo);
 
-        GameBoard GetBoard();
+		GameBoard GetBoard();
 
-        GameStates GetCurrentState();
-    }
+		GameStates GetCurrentState();
+
+		TurnResult Turn(GamePosition hitPos);
+	}
 }

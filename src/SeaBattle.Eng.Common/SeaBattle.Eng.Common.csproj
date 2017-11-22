@@ -41,10 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dto\GameBoard.cs" />
+    <Compile Include="Dto\GamePosition.cs" />
     <Compile Include="Dto\InitInfo.cs" />
     <Compile Include="Dto\Orientation.cs" />
     <Compile Include="Dto\Players.cs" />
     <Compile Include="Dto\Ship.cs" />
+    <Compile Include="Dto\TurnResult.cs" />
     <Compile Include="GameStates.cs" />
     <Compile Include="ISeaBattleGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

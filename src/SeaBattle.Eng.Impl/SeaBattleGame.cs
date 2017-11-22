@@ -32,5 +32,10 @@ namespace SeaBattle.Eng.Impl
         {
             return _state;
         }
+
+        public TurnResult Turn(GamePosition hitPos)
+        {
+            return TurnResult.Missed;
+        }
     }
 }
