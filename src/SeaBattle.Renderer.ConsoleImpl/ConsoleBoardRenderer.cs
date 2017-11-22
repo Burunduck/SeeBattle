@@ -24,6 +24,7 @@ namespace SeaBattle.Renderer.ConsoleImpl
 
                 for (int j = 0; j < board.SeaWidth; j++)
                 {
+                    //todo чё не доверяешь??? я ж доказывал что нули :))))
                     pole[i, j] = 0;
                 }
 
@@ -32,8 +33,8 @@ namespace SeaBattle.Renderer.ConsoleImpl
             }
             foreach (KeyValuePair<Players, List<Ship>> Player in board.Ships)
             {
-                if (Player.Key == 0)
-                { //Как понять какому игроку устонавливать?
+                if (Player.Key == Players.PlayerA)
+                { //Как понять какому игроку устонавливать? 
                     foreach (Ship ship in Player.Value)
                     {
                         if (ship.Orientation == 0)
