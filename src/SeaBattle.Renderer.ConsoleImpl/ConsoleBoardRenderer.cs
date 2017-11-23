@@ -18,37 +18,24 @@ namespace SeaBattle.Renderer.ConsoleImpl
         {
             int[,] pole = new int[board.SeaHeight, board.SeaWidth];
 
-
-            for (int i = 0; i < board.SeaHeight; i++)
-            {
-
-                for (int j = 0; j < board.SeaWidth; j++)
-                {
-                    //todo чё не доверяешь??? я ж доказывал что нули :))))
-                    pole[i, j] = 0;
-                }
-
-
-
-            }
             foreach (KeyValuePair<Players, List<Ship>> Player in board.Ships)
             {
                 if (Player.Key == Players.PlayerA)
                 { //Как понять какому игроку устонавливать? 
                     foreach (Ship ship in Player.Value)
                     {
-                        if (ship.Orientation == 0)
+                        if (ship.Orientation == Orientation.Horiz)
                         {
                             for (int i = 0; i < ship.Len; i++)
                             {
 
-                                pole[ship.PosX, ship.PosY + i] = 1;
+                                pole[ship.PosX-1, ship.PosY + i-1] = 1;
 
                             }
 
                             foreach (int paluba in ship.Hits)
                             {
-                                pole[ship.PosX, ship.PosY + paluba] = -1;
+                                pole[ship.PosX-1, ship.PosY + paluba-1] = -1;
                             }
 
 
@@ -57,12 +44,12 @@ namespace SeaBattle.Renderer.ConsoleImpl
                         {
                             for (int i = 0; i < ship.Len; i++)
                             {
-                                pole[ship.PosX + i, ship.PosY] = 1;
+                                pole[ship.PosX + i-1, ship.PosY-1] = 1;
                             }
 
                             foreach (int paluba in ship.Hits)
                             {
-                                pole[ship.PosX + paluba, ship.PosY] = -1;
+                                pole[ship.PosX + paluba-1, ship.PosY-1] = -1;
                             }
                         }
 
