@@ -35,7 +35,10 @@ namespace SeaBattle
 			{
 				//todo отрисовываем
 				var gameBoard = _seaBattleGame.GetBoard();
-				_boardRenderer.Render(gameBoard);
+				
+				var gameBoardFlat = new GameBoardFlatWrapper();
+				
+				_boardRenderer.Render(gameBoardFlat);
 
 				//делаем ход
 				var pos = new GamePosition();

@@ -69,6 +69,14 @@ namespace SeaBattle.Renderer.ConsoleImpl
         }
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="board">Игровая доска</param>
+        public void Render(GameBoardFlatWrapper board)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
         
