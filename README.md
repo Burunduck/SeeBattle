@@ -1,3 +1,1 @@
-��# SeeBattle
-
-test
+SeeBattle
