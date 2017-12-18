@@ -67,6 +67,8 @@ namespace SeaBattle.Renderer.ConsoleImpl
             }
 
         }
+        var a = new GameBoardFlatWrapper();
+                a.[1,2];
 
 
         /// <summary>
