@@ -17,21 +17,28 @@ namespace SeaBattle.Renderer.ConsoleImpl
 		/// <param name="board">Игровая доска</param>
 		public void Render(IGameBoardFlat board)
 		{
-			for (int i = 0; i < board.OriginalBoard.SeaHeight; i++)
-			{
-				Console.WriteLine();
-				for (int j = 0; j < board.OriginalBoard.SeaWidth; j++)
-				{
-					Console.Write($"{(int) board.GetPlayerCell(i, j)} ");
-				}
-			}
+			Console.WriteLine($"Player board [{board.Player}]");
+			RenderBoard(
+				board.OriginalBoard.SeaWidth,
+				board.OriginalBoard.SeaHeight,
+				board.GetPlayerCell);
 
-			for (int i = 0; i < board.OriginalBoard.SeaHeight; i++)
+			Console.WriteLine($"Opponent board [{board.Opponent}]");
+			RenderBoard(
+				board.OriginalBoard.SeaWidth,
+				board.OriginalBoard.SeaHeight,
+				board.GetOpponentCell);
+		}
+
+		private void RenderBoard(int w, int h, Func<int, int, GameBoardFlatCellKind> getCell)
+		{
+			for (int i = 0; i < h; i++)
 			{
 				Console.WriteLine();
-				for (int j = 0; j < board.OriginalBoard.SeaWidth; j++)
+				for (int j = 0; j < w; j++)
 				{
-					Console.Write($"{(int) board.GetOpponentCell(i, j)} ");
+					var cellInt = (int) getCell(j, i);
+					Console.Write($"{cellInt} ");
 				}
 			}
 		}

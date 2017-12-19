@@ -8,6 +8,7 @@ namespace SeaBattle.Renderer.ConsoleImpl
 	{
 		public GameBoard OriginalBoard { get; }
 		public Players Player { get; }
+		public Players Opponent { get; }
 
 		public GameBoardFlatCellKind GetPlayerCell(int x, int y)
 		{
@@ -26,6 +27,7 @@ namespace SeaBattle.Renderer.ConsoleImpl
 		{
 			OriginalBoard = board;
 			Player = player;
+			Opponent = opponent;
 
 			_flatBoardForPlayer = new GameBoardFlatCellKind[board.SeaHeight, board.SeaWidth];
 			foreach (var ship in board.Ships[player])
@@ -58,7 +60,7 @@ namespace SeaBattle.Renderer.ConsoleImpl
 						throw new ArgumentOutOfRangeException();
 				}
 			}
-			
+
 			_flatBoardForOpponent = new GameBoardFlatCellKind[board.SeaHeight, board.SeaWidth];
 			foreach (var ship in board.Ships[opponent])
 			{
