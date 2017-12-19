@@ -22,7 +22,16 @@ namespace SeaBattle.Renderer.ConsoleImpl
 				Console.WriteLine();
 				for (int j = 0; j < board.OriginalBoard.SeaWidth; j++)
 				{
-					Console.Write($"{board[i, j]} ");
+					Console.Write($"{(int) board.GetPlayerCell(i, j)} ");
+				}
+			}
+
+			for (int i = 0; i < board.OriginalBoard.SeaHeight; i++)
+			{
+				Console.WriteLine();
+				for (int j = 0; j < board.OriginalBoard.SeaWidth; j++)
+				{
+					Console.Write($"{(int) board.GetOpponentCell(i, j)} ");
 				}
 			}
 		}

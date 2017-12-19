@@ -38,7 +38,10 @@ namespace SeaBattle
 				var gameBoard = _seaBattleGame.GetBoard();
 
 				var gameBoardFlat =
-					new GameBoardFlat(gameBoard, StateToPlayer(_seaBattleGame.GetCurrentState()));
+					new GameBoardFlat(
+						gameBoard, 
+						StateToPlayer(_seaBattleGame.GetCurrentState()),
+						StateToOpponent(_seaBattleGame.GetCurrentState()));
 				_boardRenderer.Render(gameBoardFlat);
 
 				//делаем ход
@@ -48,6 +51,9 @@ namespace SeaBattle
 				var turnResult = _seaBattleGame.Turn(pos);
 
 				//todo отображаем результат хода
+
+
+		
 			}
 
 			//todo отобразить победителя
@@ -61,6 +67,18 @@ namespace SeaBattle
 					return Players.PlayerA;
 				case GameStates.TurnPlayerB:
 					return Players.PlayerB;
+				default: throw new ArgumentOutOfRangeException();
+			}
+		}
+		
+		private static Players StateToOpponent(GameStates state)
+		{
+			switch (state)
+			{
+				case GameStates.TurnPlayerA:
+					return Players.PlayerB;
+				case GameStates.TurnPlayerB:
+					return Players.PlayerA;
 				default: throw new ArgumentOutOfRangeException();
 			}
 		}

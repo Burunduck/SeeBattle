@@ -8,6 +8,8 @@ namespace SeaBattle.Eng.Common
 
 		Players Player { get; }
 
-		GameBoardFlatCellKind this[int x, int y] { get; }
+		GameBoardFlatCellKind GetPlayerCell(int x, int y);
+		
+		GameBoardFlatCellKind GetOpponentCell(int x, int y);
 	}
 }
