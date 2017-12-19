@@ -43,7 +43,7 @@ namespace SeaBattle
 				},
 			};
 
-			renderer.Render(gameBoard);
+			//renderer.Render(gameBoard);
 		}
 	}
 }

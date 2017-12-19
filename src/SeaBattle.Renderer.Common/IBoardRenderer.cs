@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SeaBattle.Eng.Common;
 
 namespace SeaBattle.Renderer.Common
 {
@@ -12,6 +13,6 @@ namespace SeaBattle.Renderer.Common
 		/// 
 		/// </summary>
 		/// <param name="board">Игровая доска</param>
-		void Render(GameBoardFlatWrapper board);
+		void Render(IGameBoardFlat board);
 	}
 }

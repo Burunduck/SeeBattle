@@ -1,4 +1,5 @@
-﻿using SeaBattle.Eng.Common;
+﻿using System;
+using SeaBattle.Eng.Common;
 using SeaBattle.Eng.Common.Dto;
 using SeaBattle.Eng.Impl;
 using SeaBattle.Renderer.Common;
@@ -35,9 +36,9 @@ namespace SeaBattle
 			{
 				//todo отрисовываем
 				var gameBoard = _seaBattleGame.GetBoard();
-				
-				var gameBoardFlat = new GameBoardFlatWrapper();
-				
+
+				var gameBoardFlat =
+					new GameBoardFlat(gameBoard, StateToPlayer(_seaBattleGame.GetCurrentState()));
 				_boardRenderer.Render(gameBoardFlat);
 
 				//делаем ход
@@ -50,6 +51,18 @@ namespace SeaBattle
 			}
 
 			//todo отобразить победителя
+		}
+
+		private static Players StateToPlayer(GameStates state)
+		{
+			switch (state)
+			{
+				case GameStates.TurnPlayerA:
+					return Players.PlayerA;
+				case GameStates.TurnPlayerB:
+					return Players.PlayerB;
+				default: throw new ArgumentOutOfRangeException();
+			}
 		}
 	}
 }
