@@ -2,7 +2,7 @@
 using SeaBattle.Eng.Common;
 using SeaBattle.Eng.Common.Dto;
 
-namespace SeaBattle.Renderer.ConsoleImpl
+namespace SeaBattle.Eng.Impl
 {
 	public class GameBoardFlat : IGameBoardFlat
 	{
