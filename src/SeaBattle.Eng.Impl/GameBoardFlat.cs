@@ -34,7 +34,7 @@ namespace SeaBattle.Eng.Impl
 			{
 				switch (ship.Orientation)
 				{
-					case Orientation.Horiz:
+					case Orientation.Vert:
 						for (var i = 0; i < ship.Len; i++)
 						{
 							_flatBoardForPlayer[ship.PosX - 1, ship.PosY + i - 1] = GameBoardFlatCellKind.Ship;
@@ -45,7 +45,7 @@ namespace SeaBattle.Eng.Impl
 							_flatBoardForPlayer[ship.PosX - 1, ship.PosY + paluba - 1] = GameBoardFlatCellKind.ShipHitted;
 						}
 						break;
-					case Orientation.Vert:
+					case Orientation.Horiz:
 						for (int i = 0; i < ship.Len; i++)
 						{
 							_flatBoardForPlayer[ship.PosX + i - 1, ship.PosY - 1] = GameBoardFlatCellKind.Ship;

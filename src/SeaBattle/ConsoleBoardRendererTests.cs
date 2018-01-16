@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using SeaBattle.Eng.Common.Dto;
 using SeaBattle.Renderer.ConsoleImpl;
+using SeaBattle.Eng.Impl;
 
 namespace SeaBattle
 {
@@ -13,7 +14,7 @@ namespace SeaBattle
 
 			var gameBoard = new GameBoard();
 			gameBoard.SeaHeight = 5;
-			gameBoard.SeaWidth = 10;
+			gameBoard.SeaWidth = 6;
 			gameBoard.ShipCounts = new Dictionary<int, int>
 			{
 				{2, 1},
@@ -43,7 +44,9 @@ namespace SeaBattle
 				},
 			};
 
-			//renderer.Render(gameBoard);
+            var PhysGameBoard = new GameBoardFlat(gameBoard, Players.PlayerA, Players.PlayerB);
+
+			renderer.Render(PhysGameBoard);
 		}
 	}
 }

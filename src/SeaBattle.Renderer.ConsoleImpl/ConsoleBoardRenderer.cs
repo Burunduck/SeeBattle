@@ -23,7 +23,10 @@ namespace SeaBattle.Renderer.ConsoleImpl
 				board.OriginalBoard.SeaHeight,
 				board.GetPlayerCell);
 
-			Console.WriteLine($"Opponent board [{board.Opponent}]");
+            Console.WriteLine();
+            Console.WriteLine();
+
+            Console.WriteLine($"Opponent board [{board.Opponent}]");
 			RenderBoard(
 				board.OriginalBoard.SeaWidth,
 				board.OriginalBoard.SeaHeight,
@@ -32,10 +35,10 @@ namespace SeaBattle.Renderer.ConsoleImpl
 
 		private void RenderBoard(int w, int h, Func<int, int, GameBoardFlatCellKind> getCell)
 		{
-			for (int i = 0; i < h; i++)
+			for (int i = 0; i < w; i++)
 			{
 				Console.WriteLine();
-				for (int j = 0; j < w; j++)
+				for (int j = 0; j < h; j++)
 				{
 					var cellInt = (int) getCell(j, i);
 					Console.Write($"{cellInt} ");
